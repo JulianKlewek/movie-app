@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Statystki dla filmów:</h1>
+
+    <tr th:each="movie : ${movieStatistics}" th:action="@{/statistics}">
+        <td th:text="${movie.getMovieName()}"/>
+        <td th:text="${movie.getUserCount()}"/><br>
+    </tr><br>
+
+    <h1>Statystki dla użytkowników:</h1>
+    <tr th:each="movie : ${userStatistics}" th:action="@{/statistics}">
+        <td th:text="${movie.getUsername()}"/>
+        <td th:text="${movie.getMovieCount()}"/><br>
+    </tr>
+
+</body>
+</html>

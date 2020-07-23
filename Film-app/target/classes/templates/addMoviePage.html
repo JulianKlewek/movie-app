@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript">
+</script>
+<!--<script>-->
+<!--     cloudinary.setCloudName("aaaaaa");-->
+<!--</script>-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form th:action="@{/movies/add-movie}" th:object="${newMovie}"  method=post>
+        <p>Movie name: <input type="text" th:field="*{name}"></p>
+        <p>Description: <input type="text" th:field="*{description}"></p>
+        <p>Image url: <input type="text" th:field="*{imageUrl}" class="cloudinary-fileupload"></p>
+
+        <p><input type="submit" value="Submit"></p>
+    </form>
+
+</body>
+</html>

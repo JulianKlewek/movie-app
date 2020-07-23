@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a th:href="${'/user/movies/all'}">Wszystkie filmy</a><br>
+    <h1>Ulubione filmy:</h1>
+
+    <tr th:each="movie : ${favouritesMovies}">
+        <td th:text="${movie.getName()}" th:field="*{movie.name}"/><br>
+        <td th:text="${movie.getDescription()}" th:field="*{movie.description}"/><br>
+        <img th:src="${movie.getImageUrl()}" th:field="*{movie.imageUrl}" th:width="300" th:height="300"><br>
+        <td><a th:href="${'/user/movies/delete/'+movie.getId()}">Usuń z ulubionych</a></td><br>
+        <td>------------------</td><br>
+    </tr>
+
+</body>
+</html>

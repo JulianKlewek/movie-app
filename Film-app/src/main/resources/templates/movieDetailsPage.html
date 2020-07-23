@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+    <form th:action="'/movies/update/'+*{id}" th:object="${movieToUpdate}" method=put >
+        <p>Nazwa filmu: <input type="text" th:field="*{name}"></p>
+        <p>Opis filmu: <input type="text" th:field="*{description}"></p>
+        <img th:src="${movieToUpdate.getImageUrl()}" th:width="300" th:height="300"><br>
+        <p>Nowy image url: <input type="text" th:field="*{imageUrl}" class="cloudinary-fileupload"></p>
+        <p><input type="submit" value="Zaktualizuj"></p>
+    </form>
+
+</body>
+</html>
